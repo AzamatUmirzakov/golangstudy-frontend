@@ -13,7 +13,8 @@ function RootPage() {
   }, [isAuthenticated, navigate])
   return (
     <div>
-      <h1 className="text-white text-4xl text-center mb-5">Root page</h1>
+      <h1 className="text-3xl font-bold text-gray-800 mb-4">Welcome to the University App</h1>
+      <p className="text-gray-600">Select an option from the sidebar to get started.</p>
     </div>
   )
 }

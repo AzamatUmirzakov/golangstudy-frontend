@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router"
-import { login } from "../../lib/auth-api"
 import useAuthStore from "../../store/auth-store"
+import apiClient from "../../lib/client"
 
 function LoginPage() {
   const [email, setEmail] = useState("")
@@ -20,12 +20,12 @@ function LoginPage() {
     e.preventDefault()
 
     try {
-      const data = await login(email, password);
+      const data = await apiClient.login(email, password);
       if (data.token) {
         useAuthStore.getState().setIsAuthenticated(true);
-        useAuthStore.getState().setToken(data.token);
         useAuthStore.getState().setEmail(email);
         useAuthStore.getState().setPassword(password);
+        useAuthStore.getState().setToken(data.token);
         console.log("Login successful:", data);
         navigate("/", { replace: true });
       }
@@ -36,22 +36,22 @@ function LoginPage() {
   }
 
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="bg-[#16161a] rounded-md w-[400px] p-6">
-        <h1 className="text-white text-4xl text-center mb-5">Login</h1>
+    <div className="flex justify-center items-center h-screen bg-gray-50">
+      <div className="bg-white rounded-lg w-[400px] p-8 shadow-lg">
+        <h1 className="text-gray-900 text-4xl text-center mb-6 font-bold">Login</h1>
 
-        <form className="flex flex-col gap-4 text-white" onSubmit={handleSubmit}>
+        <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="email">Email:</label>
-            <input type="email" value={email} onChange={handleEmailChange} id="email" name="email" required className="border border-gray-300 rounded-md w-full h-10" />
+            <label htmlFor="email" className="text-gray-700 font-medium block mb-2">Email:</label>
+            <input type="email" value={email} onChange={handleEmailChange} id="email" name="email" required className="border border-gray-300 rounded-lg w-full h-10 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500" />
           </div>
           <div>
-            <label htmlFor="password">Password:</label>
-            <input type="password" value={password} onChange={handlePasswordChange} id="password" name="password" required className="border border-gray-300 rounded-md w-full h-10" />
+            <label htmlFor="password" className="text-gray-700 font-medium block mb-2">Password:</label>
+            <input type="password" value={password} onChange={handlePasswordChange} id="password" name="password" required className="border border-gray-300 rounded-lg w-full h-10 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500" />
           </div>
           <div className="flex flex-col items-center mt-4 gap-2">
-            <button type="submit" className="bg-blue-500 rounded-md text-lg h-10 w-full cursor-pointer text-white">Login</button>
-            <Link to="/register" className="text-blue-400 text-sm text-center mt-2 hover:underline">Register</Link>
+            <button type="submit" className="bg-blue-600 rounded-lg text-lg h-10 w-full cursor-pointer text-white font-medium hover:bg-blue-700">Login</button>
+            <Link to="/register" className="text-blue-600 text-sm text-center mt-2 hover:underline font-medium">Register</Link>
           </div>
         </form>
       </div>
