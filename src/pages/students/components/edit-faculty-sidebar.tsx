@@ -3,7 +3,7 @@ import type { Faculty } from "../../../lib/constants-types"
 import apiClient from "../../../lib/client"
 import { reloadData } from "../../../lib/students-api"
 
-interface EditFacultySidebarProps {
+export type EditFacultySidebarProps = {
   isOpen: boolean
   onClose: () => void
   faculty: Faculty | null

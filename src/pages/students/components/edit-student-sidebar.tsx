@@ -4,7 +4,7 @@ import useStudentsStore from "../../../store/students-store"
 import apiClient from "../../../lib/client"
 import { reloadData } from "../../../lib/students-api"
 
-interface EditStudentSidebarProps {
+export type EditStudentSidebarProps = {
   isOpen: boolean
   onClose: () => void
   student: Student | null

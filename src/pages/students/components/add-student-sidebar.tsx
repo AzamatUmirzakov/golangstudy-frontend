@@ -4,7 +4,7 @@ import type { Student } from "../../../lib/constants-types"
 import apiClient from "../../../lib/client"
 import { reloadData } from "../../../lib/students-api"
 
-interface AddStudentSidebarProps {
+export type AddStudentSidebarProps = {
   isOpen: boolean
   onClose: () => void
 }

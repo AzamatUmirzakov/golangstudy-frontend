@@ -4,7 +4,7 @@ import type { Group } from "../../../lib/constants-types"
 import apiClient from "../../../lib/client"
 import { reloadData } from "../../../lib/students-api"
 
-interface AddGroupSidebarProps {
+export type AddGroupSidebarProps = {
   isOpen: boolean
   onClose: () => void
 }

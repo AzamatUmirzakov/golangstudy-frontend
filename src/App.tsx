@@ -4,6 +4,7 @@ import RegisterPage from './pages/register/page'
 import RootPage from './pages/root/page'
 import Sidebar from './pages/root/components/sidebar'
 import StudentsPage from './pages/students/page'
+import SubjectsPage from './pages/subjects/page'
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
       <Route element={<Sidebar />}>
         <Route index element={<RootPage />} />
         <Route path="/students" element={<StudentsPage />} />
-        <Route path="/courses" element={<RootPage />} />
+        <Route path="/subjects" element={<SubjectsPage />} />
         <Route path="/instructors" element={<RootPage />} />
       </Route>
     </Routes>

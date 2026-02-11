@@ -4,7 +4,7 @@ import { reloadData } from "../../../lib/students-api"
 import apiClient from "../../../lib/client"
 import EditStudentSidebar from "./edit-student-sidebar"
 
-interface StudentsTableProps {
+export type StudentsTableProps = {
   students: Student[]
   groups: Array<{ group_id: number; group_name: string }>
 }
