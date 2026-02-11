@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import SubjectsPageHeader from "./components/header"
 import SubjectsTable from "./components/subjects-table"
+import ProfessorsTable from "./components/professors-table"
 import useSubjectsStore from "../../store/subjects-store"
 import useStudentsStore from "../../store/students-store"
 import { reloadData } from "../../lib/subjects-api"
@@ -22,6 +23,7 @@ function SubjectsPage() {
     <>
       <SubjectsPageHeader />
       <SubjectsTable subjects={subjects} faculties={faculties} professors={professors} />
+      <ProfessorsTable professors={professors} faculties={faculties} />
     </>
   )
 }

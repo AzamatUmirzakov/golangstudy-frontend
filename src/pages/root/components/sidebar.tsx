@@ -28,10 +28,10 @@ function Sidebar() {
             Students
           </Link>
           <Link className={linkClasses("/subjects")} to="/subjects">
-            Subjects
+            Subjects and Professors
           </Link>
-          <Link className={linkClasses("/instructors")} to="/instructors">
-            Instructors
+          <Link className={linkClasses("/instructors")} to="/schedule">
+            Schedule
           </Link>
         </div>
         <div className="mt-auto">
