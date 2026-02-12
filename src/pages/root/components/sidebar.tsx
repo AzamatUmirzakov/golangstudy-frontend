@@ -30,7 +30,7 @@ function Sidebar() {
           <Link className={linkClasses("/subjects")} to="/subjects">
             Subjects and Professors
           </Link>
-          <Link className={linkClasses("/instructors")} to="/schedule">
+          <Link className={linkClasses("/schedule")} to="/schedule">
             Schedule
           </Link>
         </div>
